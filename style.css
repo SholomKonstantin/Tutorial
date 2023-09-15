@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: linear-gradient(to right, #f15f79, #b24592);
+}
+
+.btn {
+  text-decoration: none;
+  padding: 24px 72px;
+  background-color: #ffa5ba;
+  color: #fff;
+  border-radius: 20px;
+  background-repeat: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  font-size: 22px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 4px 4px rgb(0 0 0 / 15%);
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  transform: translate(-50%, -50%);
+  background-image: radial-gradient(circle closest-side, #e64b6a, transparent);
+  width: 0;
+  height: 0;
+  transition: width 0.2s ease, height 0.2s ease;
+  z-index: -2;
+}
+.btn:hover::before {
+  width: 250px;
+  height: 250px;
+}
+
+.main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box1,
+.box2 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  position: absolute;
+  border: 15px solid white;
+}
+
+.box1 {
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  animation: anim 1s linear infinite;
+}
+
+.box2 {
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  animation: anim2 1.2s linear infinite;
+}
+@keyframes anim {
+  0% {
+    transform: rotate(@deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes anim2 {
+  0% {
+    transform: rotate(deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+.dot {
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 50px;
+  animation: anim3 1.2s linear infinite;
+}
+
+@keyframes anim3 {
+  0%,
+  100% {
+    transform: scale(0.4);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
